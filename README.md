@@ -1,1 +1,2 @@
-# inflearn-tobi-springboot
+# 저장소 설명
+인프런 `토비의 스프링 부트` 강으 실습 저장소
