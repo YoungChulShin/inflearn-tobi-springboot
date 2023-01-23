@@ -17,3 +17,28 @@ Servlet Container와 여기에 등록된 Servlet이 그 역할을 해주고 있�
 프론트 컨트롤러는 `매핑`, `바인딩` 방법을 이용해서 핸들러를 호출한다. 
 - 매핑: url, method 등의 값을 확인해서 요청을 구분하는 개념
 - 바인딩: 웹 요청으로 전달 받은 값을, 핸들러에서 필요한 값으로 변환하는 방법. 예: String, Dto class 등올 변환
+
+## Bean
+POJO와 configuration metadata를 이용해서 SpringContainer는 객체를 생성할 수 있다. ApplicationContext가 SpringConainer이다. 즉, ApplicationContext를 통해서 빈을 등록할 수 있고, 가져올 수 있다. 
+
+Bean을 등록하는 방법
+1. RegisterBean 메서드를 통해서 등록
+2. FactoryMethod를 통해서 빈을 정의하고 등록하는 방법
+   ```java
+   @Configuration
+   class Test {
+    @Bean
+    public DispatcherServlet dispatcherServlet() {
+        return new DispatcherServlet();
+    }
+   }
+   ```
+3. CompoentScan을 통해서 등록하는 방법
+   - `@Component` 애노테이션이 정의된 클래스를 찾아서 빈으로 등록한다
+
+## DispatcherServlet
+Servlet 중에 하나. 애노테이션을 통해서 매핑 정보를 설정해줄 수 있다
+
+방법
+- class level에 `@RequestMapping`을 선언하고, MethodLevel에 `@GetMapping, @PostMapping`등을 선언한다
+- 
