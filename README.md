@@ -41,4 +41,4 @@ Servlet 중에 하나. 애노테이션을 통해서 매핑 정보를 설정해�
 
 방법
 - class level에 `@RequestMapping`을 선언하고, MethodLevel에 `@GetMapping, @PostMapping`등을 선언한다
-- 
+- `@Controller, @RestController` 애노테이션이 있으면, `@RequemstMapping`이 없어도 된다
