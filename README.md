@@ -42,3 +42,16 @@ Servlet 중에 하나. 애노테이션을 통해서 매핑 정보를 설정해�
 방법
 - class level에 `@RequestMapping`을 선언하고, MethodLevel에 `@GetMapping, @PostMapping`등을 선언한다
 - `@Controller, @RestController` 애노테이션이 있으면, `@RequemstMapping`이 없어도 된다
+
+## AutoConfiguration
+### Import annotation
+개념
+- ComponentScan이 아니라더라도 구성정보에 추가해줄 수 있다
+- ComponentScan은 패키지를 지정하지 않으면 해당 패키지를 Root로 가져가는데, 여기에 포함되지 않은 정보를 읽어올 때 사용할 수 있다
+
+### ImportSelector interface
+개념
+- Import를 할 때, ImportSelector를 import하고, ImportSelector가 가지고 있는 `selectImports`를 통해서 정보를 읽어올 수 있다.
+
+ClassLoader
+- 
