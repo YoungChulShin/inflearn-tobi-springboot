@@ -1,4 +1,4 @@
-package study.spring.helloboot;
+package study.spring.config;
 
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
 import org.springframework.boot.web.servlet.server.ServletWebServerFactory;
