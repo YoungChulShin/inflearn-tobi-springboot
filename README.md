@@ -54,4 +54,4 @@ Servlet 중에 하나. 애노테이션을 통해서 매핑 정보를 설정해�
 - Import를 할 때, ImportSelector를 import하고, ImportSelector가 가지고 있는 `selectImports`를 통해서 정보를 읽어올 수 있다.
 
 ClassLoader
-- 
+- 특정 Path에서 파일을 읽어올 때 사용
