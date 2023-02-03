@@ -8,11 +8,12 @@ import org.springframework.context.annotation.ConditionContext;
 import org.springframework.context.annotation.Conditional;
 import org.springframework.core.type.AnnotatedTypeMetadata;
 import org.springframework.util.ClassUtils;
+import study.spring.config.ConditionalMyOnClass;
 import study.spring.config.MyAutoConfiguration;
-import study.spring.config.autoconfig.TomcatWebServerConfig.TomcatCondition;
 
 @MyAutoConfiguration
-@Conditional(TomcatCondition.class)
+//@Conditional(TomcatCondition.class)
+@ConditionalMyOnClass("org.apache.catalina.startup.Tomcat")
 public class TomcatWebServerConfig {
 
   @Bean("tomcatWebServerFactory")
@@ -20,11 +21,11 @@ public class TomcatWebServerConfig {
     return new TomcatServletWebServerFactory();
   }
 
-  static class TomcatCondition implements Condition {
-
-    @Override
-    public boolean matches(ConditionContext context, AnnotatedTypeMetadata metadata) {
-      return ClassUtils.isPresent("org.apache.catalina.startup.Tomcat", context.getClassLoader());
-    }
-  }
+//  static class TomcatCondition implements Condition {
+//
+//    @Override
+//    public boolean matches(ConditionContext context, AnnotatedTypeMetadata metadata) {
+//      return ClassUtils.isPresent("org.apache.catalina.startup.Tomcat", context.getClassLoader());
+//    }
+//  }
 }
