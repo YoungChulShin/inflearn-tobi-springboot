@@ -1,5 +1,8 @@
 package study.spring.config.autoconfig;
 
+import study.spring.config.MyConfigurationProperties;
+
+@MyConfigurationProperties(prefix = "server")
 public class ServerProperties {
 
   private String contextPath;
